@@ -1,41 +1,109 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hướng dẫn vào server</title>
-    <style>
-        body { font-family: Arial, sans-serif; background: #121212; color: #fff; padding: 20px; text-align: center; }
-        h1 { margin-bottom: 10px; }
-        .ip-box { background: #222; padding: 10px; border-radius: 5px; display: inline-block; margin-bottom: 20px; }
-        .copy-btn { margin-left: 10px; padding: 5px 10px; border: none; background: #00c853; color: white; cursor: pointer; border-radius: 5px; }
-        img { max-width: 100%; height: auto; border-radius: 10px; margin-top: 20px; box-shadow: 0 0 10px rgba(255,255,255,0.1); }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Server Minecraft A5</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #1e1e1e;
+      color: #fff;
+      padding: 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+    h1, h2 {
+      color: #4db8ff;
+    }
+    .ip-box {
+      background: #333;
+      padding: 10px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .ip-text {
+      font-size: 18px;
+      word-break: break-all;
+    }
+    button {
+      padding: 5px 10px;
+      background: #4db8ff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #3399dd;
+    }
+    img {
+      width: 100%;
+      max-width: 500px;
+      border: 2px solid #555;
+      border-radius: 10px;
+      margin-top: 10px;
+    }
+    pre {
+      background: #2e2e2e;
+      padding: 10px;
+      border-radius: 8px;
+      white-space: pre-wrap;
+    }
+  </style>
 </head>
 <body>
-    <h1>Chào mừng đến với server!</h1>
-    <div class="ip-box">
-        IP Server: <span id="ip-text">play.example.net</span>
-        <button class="copy-btn" onclick="copyIP()">Copy</button>
-    </div>
+  <h1>🎮 Server Minecraft A5</h1>
 
-    <h2>Hướng dẫn trên máy tính (PC)</h2>
-    <img src="images/pc.png" alt="PC Guide">
+  <h2>🔗 IP Server:</h2>
+  <div class="ip-box">
+    <div class="ip-text" id="ip">mc.squidinc.space:25145</div>
+    <button onclick="copyIP()">Copy</button>
+  </div>
 
-    <h2>Hướng dẫn trên điện thoại (PE)</h2>
-    <img src="images/pe.png" alt="PE Guide">
+  <h2>💻 Cách vào máy chủ:</h2>
+  <p><strong>PC:</strong></p>
+  <img src="pc.png" alt="Hướng dẫn PC">
+  <p><strong>PE (Minecraft điện thoại):</strong></p>
+  <img src="pe.png" alt="Hướng dẫn PE">
 
-    <h2>Hướng dẫn khác</h2>
-    <img src="images/other.png" alt="Other Guide">
+  <h2>📜 Các lệnh cơ bản:</h2>
+  <pre>
+----Các Lệnh----
 
-    <script>
-        function copyIP() {
-            const ip = document.getElementById("ip-text").innerText;
-            navigator.clipboard.writeText(ip).then(() => {
-                alert("Đã copy IP: " + ip);
-            });
-        }
-    </script>
+💨 Lệnh TPA:
+/tpa <tên người chơi> → gửi lời mời dịch chuyển tới ai đó
+/tpahere <tên người chơi> → gửi lời mời ai đó dịch chuyển tới chỗ mình
+/tpaccept → Đồng ý yêu cầu dịch chuyển
+/back → Quay về chỗ vừa chết (hoặc vừa dịch chuyển)
+
+🏠 Lệnh home:
+/sethome → Tạo nhà tại vị trí đang đứng
+/home → Dịch chuyển về nhà đã set
+
+👥 Lệnh team:
+/team create <tên team> → Tạo team
+/team name <tên team> → Đặt tên team hiển thị
+/team invite <tên người chơi> → Mời ai đó vô team
+/team join <tên team> → Vô team khi được mời
+/team echest → Mở rương đồ dùng chung
+/team sethome → Tạo nhà cho team
+/team home → Quay lại nhà team
+/team setwarp <tên khu vực> → Đặt khu vực
+/team warp <tên khu vực> → Dịch chuyển tới khu vực
+/team color <màu (tiếng Anh)> → Đổi màu team
+  </pre>
+
+  <script>
+    function copyIP() {
+      const ipText = document.getElementById("ip").innerText;
+      navigator.clipboard.writeText(ipText).then(() => {
+        alert("✅ Đã copy IP!");
+      });
+    }
+  </script>
 </body>
 </html>
