@@ -1,83 +1,41 @@
+
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Server Minecraft A5_</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #1e1e1e;
-      color: #ffffff;
-      padding: 20px;
-      line-height: 1.6;
-    }
-    h1, h2 {
-      color: #00ffff;
-    }
-    .section {
-      margin-bottom: 40px;
-    }
-    img {
-      max-width: 100%;
-      border: 2px solid #fff;
-      border-radius: 10px;
-    }
-    code {
-      background-color: #333;
-      padding: 2px 6px;
-      border-radius: 4px;
-      color: #00ffcc;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hướng dẫn vào server</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #121212; color: #fff; padding: 20px; text-align: center; }
+        h1 { margin-bottom: 10px; }
+        .ip-box { background: #222; padding: 10px; border-radius: 5px; display: inline-block; margin-bottom: 20px; }
+        .copy-btn { margin-left: 10px; padding: 5px 10px; border: none; background: #00c853; color: white; cursor: pointer; border-radius: 5px; }
+        img { max-width: 100%; height: auto; border-radius: 10px; margin-top: 20px; box-shadow: 0 0 10px rgba(255,255,255,0.1); }
+    </style>
 </head>
 <body>
+    <h1>Chào mừng đến với server!</h1>
+    <div class="ip-box">
+        IP Server: <span id="ip-text">play.example.net</span>
+        <button class="copy-btn" onclick="copyIP()">Copy</button>
+    </div>
 
-  <h1>🌍 Server Minecraft: A5_</h1>
+    <h2>Hướng dẫn trên máy tính (PC)</h2>
+    <img src="images/pc.png" alt="PC Guide">
 
-  <div class="section">
-    <h2>📌 IP Máy chủ</h2>
-    <p><strong>Địa chỉ:</strong> <code>mc.squidinc.space:25145</code></p>
-  </div>
+    <h2>Hướng dẫn trên điện thoại (PE)</h2>
+    <img src="images/pe.png" alt="PE Guide">
 
-  <div class="section">
-    <h2>🧭 Cách vào server</h2>
+    <h2>Hướng dẫn khác</h2>
+    <img src="images/other.png" alt="Other Guide">
 
-    <h3>💻 Trên PC:</h3>
-    <img src="9a10a25f-b759-40d2-a301-8175603751ad.png" alt="Hướng dẫn PC">
-
-    <h3>📱 Trên PE (điện thoại):</h3>
-    <img src="2e796522-7a95-4ba1-b521-ebb55052eb53.png" alt="Hướng dẫn PE">
-  </div>
-
-  <div class="section">
-    <h2>📜 Các lệnh cơ bản</h2>
-    <pre>
----- Các Lệnh ----
-
-- Lệnh TPA:
-  /tpa <tên người chơi>         -> gửi lời mời dịch chuyển tới ai đó
-  /tpahere <tên người chơi>     -> gửi lời mời ai đó dịch chuyển tới chỗ mình
-  /tpaccept                     -> Đồng ý yêu cầu dịch chuyển
-  /back                         -> Quay về chỗ vừa chết (hoặc vừa dịch chuyển)
-
-- Lệnh home:
-  /sethome                      -> Tạo nhà tại vị trí đang đứng
-  /home                         -> Dịch chuyển về nhà đã set
-
-- Lệnh team:
-  /team create <tên team>       -> Tạo team
-  /team name <tên team>         -> Đặt tên hiển thị
-  /team invite <tên người chơi> -> Mời ai đó vô team
-  /team join <tên team>         -> Vào team đã được mời
-  /team echest                  -> Mở rương dùng chung
-  /team sethome                 -> Tạo nhà cho team
-  /team home                    -> Quay về nhà của team
-  /team setwarp <tên khu vực>  -> Đặt một khu vực
-  /team warp <tên khu vực>     -> Dịch chuyển tới khu vực
-  /team color <màu>            -> Đổi màu team (ví dụ: red, blue,...)
-    </pre>
-  </div>
-
+    <script>
+        function copyIP() {
+            const ip = document.getElementById("ip-text").innerText;
+            navigator.clipboard.writeText(ip).then(() => {
+                alert("Đã copy IP: " + ip);
+            });
+        }
+    </script>
 </body>
 </html>
